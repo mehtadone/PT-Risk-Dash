@@ -10,7 +10,7 @@ Having spent 15 years developing software for Forex trading desks, the most impo
 This is not a simple one click install application. It requires a bit of installation and expertise to put together. There are far better and easier tools out there if you want profit figures only. This is for someone who wants to manage their risk, and also over multiple bots.
 
 ## How much is it?
-Nothing. It is fully open source, like CryptoGramBot. 
+Nothing. It is fully open source, like [CryptoGramBot](https://github.com/mehtadone/CryptoGramBot). 
 
 ## How do I install it? (To be improved)
 
