@@ -1,4 +1,4 @@
-
+![Screenshot 1](https://github.com/mehtadone/PT-Risk-Dash/blob/master/dash.png?raw=true)
 
 ## What is this?
 This is a dashboard I built for personal use that utilises Grafana, postgresql and a script to take statistics from the Profit Trailer json file to a database so that I can view metrics that are important to me. It is not ideal as it does not take information from the exchange but will work as an approximation for now. 
