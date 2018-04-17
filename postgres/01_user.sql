@@ -1,0 +1,1 @@
+CREATE USER grafanareader WITH PASSWORD 'grafanareader';
