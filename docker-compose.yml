@@ -1,0 +1,47 @@
+version: '3.6'
+
+volumes:
+  grafana_data: {}
+  pgadmin_data: {}
+
+networks:
+  public:
+    driver: overlay
+
+services:
+  grafana:
+    image: grafana/grafana
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=grafana_password
+      - GF_USERS_ALLOW_SIGN_UP=false
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+       - /var/lib/postgresql/data:/var/lib/postgresql/data
+       - ./postgres/:/docker-entrypoint-initdb.d/
+    environment:
+      POSTGRES_USER: pt_binance
+      POSTGRES_PASSWORD: pt_binance
+      POSTGRES_DB: pt_binance
+      PGDATA: /data/postgres
+
+  pgadmin:
+    image: fenglc/pgadmin4
+    restart: unless-stopped
+    ports:
+      - "5050:5050"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    environment:
+        - "DEFAULT_USER=pg_user"
+        - "DEFAULT_PASSWORD=pg_pasword"

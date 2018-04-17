@@ -1,0 +1,24 @@
+{
+  "name": "pt-exporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ptlogger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehtadone/PT-Risk-Dash.git"
+  },
+  "author": "mehtadone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehtadone/PT-Risk-Dash/issues"
+  },
+  "homepage": "https://github.com/mehtadone/PT-Risk-Dash#readme",
+  "dependencies": {
+    "pg": "^7.4.1",
+    "ssl-root-cas": "^1.2.5",
+    "superagent": "^3.8.2"
+  }
+}
