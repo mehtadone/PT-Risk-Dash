@@ -12,7 +12,7 @@ This is not a simple one click install application. It requires a bit of install
 ## How much is it?
 Nothing. It is fully open source, like [CryptoGramBot](https://github.com/mehtadone/CryptoGramBot). 
 
-## How do I install it? (To be improved)
+## How do I install it? Option 1 (To be improved)
 
 1. Install Grafana beta 5
 2. Install postgresdb, if not already installed
@@ -22,6 +22,32 @@ Nothing. It is fully open source, like [CryptoGramBot](https://github.com/mehtad
 (host,port,password, schema_name)
 There maybe some dependencies you'll to install for node. If you run the js file manually, you'll see them. There are 2 or 3
 5. Import the json dashboards into grafana. (Trex, Binance BTC, Binance ETH and PT Combined BTC added as an example)
+
+## How do I install it? option 2 (To be improved)
+1. Install docker
+2. Install docker-compose
+2. Install nodejs
+```
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+3. Installation grafana 5, postgres and pgadmin via docker
+```
+docker-compose up -d
+```
+4. Install nodejs package and run script
+```
+cd pt-exporter
+npm install
+node ptlogger.js 127.0.0.1 8081 pt_password binance
+```
+
+## Issues
+
+1. If Grafana does not find the given source directly, you have to delete the data source and recreate it manually (I suspect a bug in grafana v5 with the option "sslmode: disable" in the datasource.yml file)
+
+2. If you want to display the values in USD/EUR and not GBP by default, you will have to modify the references in the graphs.
+
 
 ## Huge thanks
 
