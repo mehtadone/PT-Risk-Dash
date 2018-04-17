@@ -4,9 +4,11 @@
  * version 2.02
  */
 'use strict';
+require('ssl-root-cas').inject();
 const request = require('superagent')
 const agent = request.agent()
 const pg = require('pg');
+
 
 const clientPG = new pg.Client({
   host: 'localhost',
